@@ -23,7 +23,7 @@ export const botConfig = {
     // 5 = Competing
     activities: [
       {
-        name: "Made by VOID", // required by Discord API, not shown in the client
+        name: "Made by void ❤", // required by Discord API, not shown in the client
         state: "Best bot made by void",     // this is what people actually see
         type: 4,               // Custom
       },
