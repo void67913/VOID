@@ -24,7 +24,7 @@ export const botConfig = {
     activities: [
       {
         name: "Made by VOID", // required by Discord API, not shown in the client
-        state: "stalking",     // this is what people actually see
+        state: "Best bot made by void",     // this is what people actually see
         type: 4,               // Custom
       },
     ],
