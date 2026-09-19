@@ -12,7 +12,7 @@ export default {
 
         try {
             const response = await openai.responses.create({
-                model: 'gpt-5.6-mini',
+                model:'gpt-5.6-luna',
                 input: query
             });
 
