@@ -10,6 +10,7 @@ export default {
     data: new SlashCommandBuilder()
         .setName('search')
         .setDescription('Search the web and dictionaries')
+
         .addSubcommand(subcommand =>
             subcommand
                 .setName('define')
@@ -19,6 +20,7 @@ export default {
                         .setDescription('The word to look up')
                         .setRequired(true))
         )
+
         .addSubcommand(subcommand =>
             subcommand
                 .setName('google')
@@ -28,6 +30,7 @@ export default {
                         .setDescription('What would you like to search for?')
                         .setRequired(true))
         )
+
         .addSubcommand(subcommand =>
             subcommand
                 .setName('urban')
@@ -36,7 +39,9 @@ export default {
                     option.setName('term')
                         .setDescription('The term to look up on Urban Dictionary')
                         .setRequired(true))
-        ),        .addSubcommand(subcommand =>
+        )
+
+        .addSubcommand(subcommand =>
             subcommand
                 .setName('ai')
                 .setDescription('Ask AI a question')
@@ -52,14 +57,21 @@ export default {
         switch (subcommand) {
             case 'define':
                 return await searchDefine.execute(interaction, config, client);
+
             case 'google':
                 return await searchGoogle.execute(interaction, config, client);
+
             case 'urban':
-                case 'ai':
-    return await searchAI.execute(interaction, config, client);
                 return await searchUrban.execute(interaction, config, client);
+
+            case 'ai':
+                return await searchAI.execute(interaction, config, client);
+
             default:
-                return await replyUserError(interaction, { type: ErrorTypes.UNKNOWN, message: 'Unknown subcommand' });
+                return await replyUserError(interaction, {
+                    type: ErrorTypes.UNKNOWN,
+                    message: 'Unknown subcommand'
+                });
         }
     }
 };
